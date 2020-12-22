@@ -4,7 +4,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The Task you add to do will appear Here.."
+        android:text="The Task you add to do will appear Here...."
         android:textAlignment="center"
         android:layout_gravity="center"
         android:id="@+id/DoText"
@@ -18,5 +18,11 @@
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
         android:id="@+id/fabs"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerView"
+        android:layout_margin="16dp">
+    </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>
