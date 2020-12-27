@@ -5,76 +5,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTaskActivity">
+    tools:context=".activity.AddTaskActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter the task Name"
-        android:layout_margin="16dp"
-        android:id="@+id/taskNameDetail"
-        >
-    </EditText>
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/taskNameDetail"
-        android:hint="Select Start Date"
-        android:layout_margin="16dp"
-        android:id="@+id/startDate"
-        >
-    </EditText>
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:hint="Select End Date"
-        android:layout_below="@id/startDate"
-        android:layout_margin="16dp"
-        android:id="@+id/endDate"
-        >
-    </EditText>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_below="@id/taskNameDetail"
-        android:layout_toRightOf="@id/startDate"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_calender_foreground"
-        android:id="@+id/image_calender1"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_below="@id/image_calender1"
-        android:layout_toRightOf="@id/endDate"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_calender_foreground"
-        android:id="@+id/image_calender2"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/endDate"
-        android:layout_margin="16dp"
-        android:hint="Enter the Task Description"
-        android:id="@+id/TaskDescription"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/TaskDescription"
-        android:background="@color/colorAccent"
-        android:text="ADD Task"
-        android:layout_margin="32dp"
-        android:id="@+id/AddTask"
-        ></Button>
-    <CalendarView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/AddTask"
-        android:id="@+id/Calender_view"
-        android:layout_margin="16dp"
-        ></CalendarView>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter the task Name"
+            android:layout_margin="16dp"
+            android:id="@+id/taskNameDetail"></EditText>
+
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:hint="Select End Date"
+            android:layout_below="@id/taskNameDetail"
+            android:layout_margin="16dp"
+            android:id="@+id/endDate"></EditText>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_below="@id/taskNameDetail"
+            android:layout_toRightOf="@id/endDate"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_calender_foreground"
+            android:id="@+id/image_calender2" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/endDate"
+            android:layout_margin="16dp"
+            android:hint="Enter the Task Description"
+            android:id="@+id/TaskDescription" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TaskDescription"
+            android:background="@color/colorAccent"
+            android:text="ADD Task"
+            android:layout_margin="32dp"
+            android:id="@+id/AddTask"></Button>
+
+        <CalendarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/AddTask"
+            android:id="@+id/Calender_view"
+            android:layout_margin="16dp"></CalendarView>
     </RelativeLayout>
 </ScrollView>
