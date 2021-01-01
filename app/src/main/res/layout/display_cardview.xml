@@ -37,63 +37,58 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/task_date"
             android:layout_centerInParent="true"
-            android:visibility="gone"
             android:layout_marginStart="8dp"
+            android:visibility="gone"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/colorAccent"
+            android:background="@color/cardview_shadow_end_color"
             android:orientation="horizontal">
 
-            <ImageView
+            <Button
                 android:id="@+id/cancel_button"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/clear_button"></ImageView>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_dark_background"
+                android:text="Cancel"
+                ></Button>
 
             <Space
                 android:id="@+id/space_give1"
-                android:layout_width="32dp"
+                android:layout_width="16dp"
                 android:layout_height="wrap_content"></Space>
-
-            <ImageView
+            <Button
                 android:id="@+id/delete_button"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/edit_button"></ImageView>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_dark_background"
+                android:text="Del All"
+                ></Button>
 
             <Space
                 android:id="@+id/space_give2"
-                android:layout_width="32dp"
+                android:layout_width="16dp"
                 android:layout_height="wrap_content"></Space>
-
-            <ImageView
+            <Button
                 android:id="@+id/done_button"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/edit_button"></ImageView>
-
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_dark_background"
+                android:text="Done"
+                ></Button>
             <Space
                 android:id="@+id/space_give3"
-                android:layout_width="32dp"
+                android:layout_width="16dp"
                 android:layout_height="wrap_content" />
-
-            <ImageView
+            <Button
                 android:id="@+id/edit_button"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/edit_button"></ImageView>
-
-
-            <Space
-                android:id="@+id/space_give4"
-                android:layout_width="32dp"
-                android:layout_height="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_dark_background"
+                android:text="Edit"
+                ></Button>
         </LinearLayout>
-        <!--        <View-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="1dp"-->
-        <!--            android:background="@color/colorAccent"/>-->
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

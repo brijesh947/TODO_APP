@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,7 +40,7 @@ public class DoWork extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.do_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setHasFixedSize(true);
-        final DisplayDataAdapter displayDataAdapter = new DisplayDataAdapter();
+        final DisplayDataAdapter displayDataAdapter = new DisplayDataAdapter(getActivity());
         recyclerView.setAdapter(displayDataAdapter);
         floatButton = view.findViewById(R.id.fabs);
         taskViewModel = ViewModelProviders.of(getActivity()).get(TaskViewModel.class);
@@ -50,6 +51,18 @@ public class DoWork extends Fragment {
 
             }
         });
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                taskViewModel.delete(displayDataAdapter.getTaskDetailAt(viewHolder.getAdapterPosition()));
+                Toast.makeText(getContext(), "Task Deleted", Toast.LENGTH_SHORT).show();
+            }
+        }).attachToRecyclerView(recyclerView);
 
         floatButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,14 +77,14 @@ public class DoWork extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1 && resultCode == Activity.RESULT_OK){
-            String task_name = data.getStringExtra(AddTaskActivity.EXTRA_TITLE);
-            String task_date = data.getStringExtra(AddTaskActivity.EXTRA_DATE);
-            TaskDetail taskDetail = new TaskDetail(task_name,task_date,0);
+        String task_name = data.getStringExtra(AddTaskActivity.EXTRA_TITLE);
+        String task_date = data.getStringExtra(AddTaskActivity.EXTRA_DATE);
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK && !task_name.isEmpty() && !task_date.isEmpty()) {
+            TaskDetail taskDetail = new TaskDetail(task_name, task_date, 0);
             taskViewModel.insert(taskDetail);
-            Toast.makeText(getContext(),"Task Saved",Toast.LENGTH_LONG).show();
-        }else {
-            Toast.makeText(getContext(),"Task Not saved ",Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "Task Saved", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getContext(), "Task Not saved ", Toast.LENGTH_LONG).show();
         }
     }
 }
