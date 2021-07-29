@@ -2,6 +2,7 @@ package com.example.todo.Fragments;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,12 +10,14 @@ import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -178,6 +181,31 @@ public class DoneWork extends Fragment {
 //        inflater.inflate(R.menu.sample_menu,menu);
 //        super.onCreateOptionsMenu(menu, inflater);
 //    }
+@Override
+public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull  MenuInflater inflater) {
+
+    inflater.inflate(R.menu.sample_menu,menu);
+    MenuItem searchItem = menu.findItem(R.id.search_button);
+    SearchManager searchManager =  (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
+    SearchView searchView = (SearchView) searchItem.getActionView();
+    if(searchView!=null){
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                displayDataAdapter.filter(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                displayDataAdapter.filter(newText);
+                return true;
+            }
+        });
+    }
+    super.onCreateOptionsMenu(menu, inflater);
+}
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

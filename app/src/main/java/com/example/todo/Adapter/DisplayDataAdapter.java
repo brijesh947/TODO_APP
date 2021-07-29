@@ -94,7 +94,7 @@ public class DisplayDataAdapter extends RecyclerView.Adapter<DisplayDataAdapter.
          for(TaskDetail detail:copyTask){
               Log.d("TAG", "filter: string is " + detail.getTask_name());
 
-             if(detail.getTask_name().toLowerCase().contains(str.toLowerCase())){
+             if(detail.getTask_name().toLowerCase().contains(str.toLowerCase().trim())){
 
                  temp.add(detail);
              }
