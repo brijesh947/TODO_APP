@@ -19,8 +19,8 @@
     </item>
     <item android:title="Search"
         android:id="@+id/search_button"
-        app:showAsAction="ifRoom"
+        app:showAsAction="collapseActionView|ifRoom"
         android:icon="@drawable/ic_action_search"
-        ></item>
+        app:actionViewClass="android.widget.SearchView"></item>
 
 </menu>

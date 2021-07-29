@@ -26,30 +26,30 @@ public abstract class TaskDataBase extends RoomDatabase {
         }
         return INSTANCE;
     }
+
+    private static RoomDatabase.Callback sRoomCallBack = new RoomDatabase.Callback() {
+
+        @Override
+        public void onOpen(@NonNull SupportSQLiteDatabase db) {
+            super.onOpen(db);
+            new SetDefultAsyncTask(INSTANCE).execute();
+        }
+    };
+
+    private static class SetDefultAsyncTask extends AsyncTask<Void, Void, Void> {
+        private final TaskDao taskDao;
+
+        public SetDefultAsyncTask(TaskDataBase instance) {
+            taskDao = instance.taskDao();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            taskDao.deleteAll();
+            TaskDetail taskDetail = new TaskDetail("Default Task", "Today", 0);
+            taskDao.insert(taskDetail);
+            return null;
+        }
+    }
+
 }
-//    private static RoomDatabase.Callback sRoomCallBack = new RoomDatabase.Callback() {
-//
-//        @Override
-//        public void onOpen(@NonNull SupportSQLiteDatabase db) {
-//            super.onOpen(db);
-//            new SetDefultAsyncTask(INSTANCE).execute();
-//        }
-//    };
-//
-//    private static class SetDefultAsyncTask extends AsyncTask<Void, Void, Void> {
-//        private final TaskDao taskDao;
-//
-//        public SetDefultAsyncTask(TaskDataBase instance) {
-//            taskDao = instance.taskDao();
-//        }
-//
-//        @Override
-//        protected Void doInBackground(Void... voids) {
-//            taskDao.deleteAll();
-//            TaskDetail taskDetail = new TaskDetail("Default Task", "Today", 0);
-//            taskDao.insert(taskDetail);
-//            return null;
-//        }
-//    }
-//
-//}

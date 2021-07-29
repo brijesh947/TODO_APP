@@ -1,5 +1,8 @@
 package com.example.todo.activity;
 
+import android.app.Fragment;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,11 +12,15 @@ import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.todo.Adapter.DisplayDataAdapter;
 import com.example.todo.Adapter.MyAdapter;
+import com.example.todo.Fragments.DoWork;
 import com.example.todo.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
@@ -68,25 +75,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.sample_menu,menu);
-        MenuItem searchItem = menu.findItem(R.id.search_button);
-        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-        if(searchView!=null){
-            Log.d("tag", "onCreateOptionsMenu: searchView is not null");
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                searchView.clearFocus();
-                return false;
-            }
+        return true;
+    }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                Toast.makeText(getApplicationContext(),"Entering the text "  , Toast.LENGTH_LONG).show();
-                return false;
-            }
-        });
-        }
-        return super.onCreateOptionsMenu(menu);
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        return super.onPrepareOptionsMenu(menu);
     }
 }

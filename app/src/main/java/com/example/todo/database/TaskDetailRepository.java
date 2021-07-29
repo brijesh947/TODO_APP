@@ -55,7 +55,6 @@ public class TaskDetailRepository {
         public deleteRowAsyncTask(TaskDao taskDao) {
             mAsyncTaskDao = taskDao;
         }
-
         @Override
         protected Void doInBackground(TaskDetail... taskDetails) {
             mAsyncTaskDao.deleteRow(taskDetails[0]);

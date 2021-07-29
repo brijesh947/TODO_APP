@@ -48,4 +48,13 @@ public class TaskDetail {
     public int getTask_status() {
         return task_status;
     }
+    @NonNull
+    public void setTask_status(int status){
+        this.task_status = status;
+    }
+    @NonNull
+    public void setTask(String task_name,String task_endDate){
+        this.task_name = task_name;
+        this.task_endDate = task_endDate;
+    }
 }

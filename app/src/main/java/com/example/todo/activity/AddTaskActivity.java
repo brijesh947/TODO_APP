@@ -10,13 +10,15 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.todo.R;
 
 public class AddTaskActivity extends AppCompatActivity {
     public static final String EXTRA_TITLE = "com.example.todo.activity.EXTRA_TITLE";
     public static final String EXTRA_DATE = "com.example.todo.activity.EXTRA_DATE";
-    EditText taskName, endDate, taskDetail;
+    EditText taskName, taskDetail;
+    TextView endDate;
     CalendarView calendarView;
     Button add_button;
     ImageView calender_image2;

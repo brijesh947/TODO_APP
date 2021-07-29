@@ -12,7 +12,7 @@ import java.util.List;
 public class TaskViewModel extends AndroidViewModel {
    private TaskDetailRepository taskDetailRepository;
    private LiveData<List<TaskDetail>> mDowork;
-    private LiveData<List<TaskDetail>> mDonework;
+   private LiveData<List<TaskDetail>> mDonework;
 
     public TaskViewModel(@NonNull Application application) {
         super(application);
