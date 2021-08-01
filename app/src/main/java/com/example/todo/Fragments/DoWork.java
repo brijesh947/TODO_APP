@@ -34,6 +34,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.todo.Adapter.DisplayDataAdapter;
 import com.example.todo.R;
 import com.example.todo.activity.AddTaskActivity;
+import com.example.todo.activity.AppInfoActivity;
 import com.example.todo.activity.EditActivity;
 import com.example.todo.activity.MainActivity;
 import com.example.todo.database.TaskDetail;
@@ -216,6 +217,15 @@ public class DoWork extends Fragment implements  MenuItem.OnActionExpandListener
                 }
             });
         }
+        MenuItem appInfo = menu.findItem(R.id.app_info);
+        appInfo.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(activity, AppInfoActivity.class);
+                startActivity(intent);
+                return true;
+            }
+        });
         super.onCreateOptionsMenu(menu, inflater);
     }
 
