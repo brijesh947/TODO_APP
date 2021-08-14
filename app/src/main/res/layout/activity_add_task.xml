@@ -56,11 +56,5 @@
             android:background="@color/colorAccent"
             android:text="ADD Task"></Button>
 
-        <CalendarView
-            android:id="@+id/Calender_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/AddTask"
-            android:layout_margin="16dp"></CalendarView>
     </RelativeLayout>
 </ScrollView>
