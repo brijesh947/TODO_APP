@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.todo">
 
-    <uses-permission android:name="android.permission.WRITE_CALENDAR"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:allowBackup="true"
@@ -11,11 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.EditActivity"
+        <activity android:name=".activity.AppInfoActivity"
             android:parentActivityName=".activity.MainActivity"></activity>
+        <activity
+            android:name=".activity.EditActivity"
+            android:parentActivityName=".activity.MainActivity" />
         <activity android:name=".activity.SearchResultActivty">
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH"></action>
+                <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
         <activity
@@ -27,8 +31,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <meta-data android:name="android.app.searchable"
-                android:resource="@layout/searchable"></meta-data>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@layout/searchable" />
         </activity>
     </application>
 
