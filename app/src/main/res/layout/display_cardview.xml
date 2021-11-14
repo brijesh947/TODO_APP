@@ -51,51 +51,51 @@
             android:background="@color/cardview_shadow_end_color"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/cancel_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_highlight_off_24"
 
-                android:background="@drawable/roundedbutton"
                 android:text="Cancel"
-                ></Button>
+                ></ImageButton>
 
             <Space
                 android:id="@+id/space_give1"
-                android:layout_width="5dp"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"></Space>
-            <Button
+            <ImageButton
                 android:id="@+id/delete_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/roundedbutton"
+                android:src="@drawable/ic_baseline_delete_24"
                 android:text="Delete"
-                ></Button>
+                ></ImageButton>
 
             <Space
                 android:id="@+id/space_give2"
-                android:layout_width="5dp"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"></Space>
-            <Button
+            <ImageButton
                 android:id="@+id/done_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/roundedbutton"
+                android:src="@drawable/ic_baseline_done_24"
                 android:text="Done"
-                ></Button>
+                ></ImageButton>
             <Space
                 android:id="@+id/space_give3"
-                android:layout_width="5dp"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content" />
-            <Button
+            <ImageButton
                 android:id="@+id/edit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/roundedbutton"
+                android:src="@drawable/ic_baseline_edit_24"
                 android:text="Edit"
-                ></Button>
+                ></ImageButton>
         </LinearLayout>
-
+       
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

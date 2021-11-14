@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -78,17 +79,17 @@ public class DoneWork extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 LinearLayout linearLayout = view.findViewById(R.id.show_action_onclick);
-                Button doneButton = view.findViewById(R.id.done_button);
-                doneButton.setText("UNDO");
+                ImageButton doneButton = view.findViewById(R.id.done_button);
+
                 linearLayout.setVisibility(View.VISIBLE);
-                Button cancelButton = view.findViewById(R.id.cancel_button);
+                ImageButton cancelButton = view.findViewById(R.id.cancel_button);
                 cancelButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         linearLayout.setVisibility(View.GONE);
                     }
                 });
-                Button editButton = view.findViewById(R.id.edit_button);
+                ImageButton editButton = view.findViewById(R.id.edit_button);
                 editButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -100,7 +101,7 @@ public class DoneWork extends Fragment {
                         pos = position;
                     }
                 });
-                Button deleteButton = view.findViewById(R.id.delete_button);
+                ImageButton deleteButton = view.findViewById(R.id.delete_button);
                 deleteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

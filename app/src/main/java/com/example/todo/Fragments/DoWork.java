@@ -7,6 +7,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -17,7 +19,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -76,8 +80,7 @@ public class DoWork extends Fragment implements  MenuItem.OnActionExpandListener
     @SuppressLint("ResourceType")
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.dolayout, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {        View view = inflater.inflate(R.layout.dolayout, container, false);
         recyclerView = view.findViewById(R.id.do_recycler_view);
         setHasOptionsMenu(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -99,7 +102,7 @@ public class DoWork extends Fragment implements  MenuItem.OnActionExpandListener
             public void onClick(View view, int position) {
                 LinearLayout linearLayout = view.findViewById(R.id.show_action_onclick);
                 linearLayout.setVisibility(View.VISIBLE);
-                Button editButton = view.findViewById(R.id.edit_button);
+                ImageButton editButton = view.findViewById(R.id.edit_button);
                 editButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -111,14 +114,14 @@ public class DoWork extends Fragment implements  MenuItem.OnActionExpandListener
                         pos = position;
                     }
                 });
-                Button cancelButton = view.findViewById(R.id.cancel_button);
+                ImageButton cancelButton = view.findViewById(R.id.cancel_button);
                 cancelButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         linearLayout.setVisibility(View.GONE);
                     }
                 });
-                Button doneButton = view.findViewById(R.id.done_button);
+                ImageButton doneButton = view.findViewById(R.id.done_button);
                 doneButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -149,7 +152,7 @@ public class DoWork extends Fragment implements  MenuItem.OnActionExpandListener
 
                     }
                 });
-                Button deleteButton = view.findViewById(R.id.delete_button);
+                ImageButton deleteButton = view.findViewById(R.id.delete_button);
                 deleteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -17,32 +17,39 @@
             android:layout_margin="16dp"
             android:hint="Enter the task Name"></EditText>
 
-
-        <TextView
-            android:id="@+id/EditendDate"
-            android:layout_width="250dp"
-            android:layout_height="48dp"
-            android:layout_below="@id/EditTaskNameDetail"
-            android:layout_margin="16dp"
-            android:textStyle="bold"
-            android:textSize="32dp"
-            ></TextView>
-
+       <LinearLayout android:layout_height="72dp"
+           android:layout_width="match_parent"
+           android:layout_below="@id/EditTaskNameDetail"
+           android:orientation="horizontal"
+           android:id="@+id/calender_layout_view">
 
         <ImageView
             android:id="@+id/EditImage_calender2"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:layout_below="@id/EditTaskNameDetail"
             android:layout_margin="16dp"
-            android:layout_toRightOf="@id/EditendDate"
-            android:src="@drawable/ic_calender_foreground" />
 
+            android:src="@drawable/ic_calender_foreground"
+            />
+           <TextView
+               android:id="@+id/EditendDate"
+               android:layout_width="wrap_content"
+               android:layout_height="56dp"
+               android:layout_below="@id/EditTaskNameDetail"
+               android:textStyle="bold"
+               android:hint="hello"
+               android:textSize="30dp"
+              android:layout_weight="0.5"
+               android:layout_marginTop="32dp"
+               android:layout_marginRight="16dp"
+               ></TextView>
+       </LinearLayout>
         <EditText
             android:id="@+id/EditTaskDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/EditendDate"
+            android:layout_below="@+id/calender_layout_view"
             android:layout_margin="16dp"
             android:hint="Edit the Task Description" />
 
