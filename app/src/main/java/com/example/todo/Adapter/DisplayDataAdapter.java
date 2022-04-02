@@ -110,10 +110,16 @@ public class DisplayDataAdapter extends RecyclerView.Adapter<DisplayDataAdapter.
     class TaskDetailHolder extends RecyclerView.ViewHolder {
         private TextView task_name;
         private TextView task_endDate;
+        private TextView task_year;
         private LinearLayout linearLayout;
+        private LinearLayout task_layout;
+        private LinearLayout date_layout;
 
         public TaskDetailHolder(@NonNull View itemView) {
             super(itemView);
+            task_layout = itemView.findViewById(R.id.card_layout);
+            date_layout = itemView.findViewById(R.id.date_layout);
+            task_year = itemView.findViewById(R.id.year);
             task_name = itemView.findViewById(R.id.task_name);
             task_endDate = itemView.findViewById(R.id.task_date);
             linearLayout = itemView.findViewById(R.id.show_action_onclick);

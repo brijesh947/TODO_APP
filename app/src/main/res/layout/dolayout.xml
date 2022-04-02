@@ -28,6 +28,7 @@
         android:id="@+id/do_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:listitem="@layout/display_cardview"
         ></androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>

@@ -13,9 +13,9 @@
         android:text="The Task You have Done will appear Here.."
         android:textAlignment="center"
         android:textSize="20sp"
-        android:visibility="gone"></TextView>
+       ></TextView>
 
-    <androidx.recyclerview.widget.RecyclerView
+     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/done_recyler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

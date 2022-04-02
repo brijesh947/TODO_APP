@@ -60,7 +60,7 @@ public class DoWork extends Fragment implements  MenuItem.OnActionExpandListener
     DisplayDataAdapter displayDataAdapter;
     private int pos;
     List<TaskDetail> detailList = new ArrayList<>();
-    private String task_date, task_name;
+    private String task_date, task_name,task_year;
 
     public DoWork() {
     }

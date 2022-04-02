@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:id="@+id/author"
         android:gravity="center"
-        android:text="Author :- Brijesh Kumar Dubey"
+        android:text="Developer:- Brijesh Kumar Dubey"
         android:textStyle="bold"
         android:textSize="24dp"
         android:layout_marginTop="16dp"

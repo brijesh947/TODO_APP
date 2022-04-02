@@ -97,7 +97,7 @@ public class AddTaskActivity extends AppCompatActivity {
 
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                Date = dayOfMonth + "-" + (month + 1) + "-" + year;
+                Date = dayOfMonth + "/" + (month + 1) ;
                 endDate.setText(Date);
 
 
